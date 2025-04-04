@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="8dp"
+    android:padding="8dp">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:gravity="center"
+        android:text="Wifi Credentials"
+        android:textSize="24sp"
+        android:textStyle="bold" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/BlueSTSDKInputTypeStyle"
+        android:id="@+id/predictive_maintenance_dashboard_device_wifi_ssid_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="SSID">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/predictive_maintenance_dashboard_device_wifi_ssid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif"
+            android:inputType="textNoSuggestions"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        style="@style/BlueSTSDKInputTypeStyle"
+        android:id="@+id/predictive_maintenance_dashboard_device_wifi_password_wrapper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:passwordToggleEnabled="true"
+        android:hint="Password">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/predictive_maintenance_dashboard_device_wifi_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="4dp"
+            android:layout_marginTop="4dp"
+            android:layout_marginRight="4dp"
+            android:layout_marginBottom="16dp"
+            android:fontFamily="sans-serif"
+            android:inputType="textPassword"/>
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scaleType="center">
+
+        <TextView
+            android:text="Security"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_gravity="center"/>
+        <Spinner
+            android:id="@+id/predictive_maintenance_dashboard_device_wifi_security"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:padding="8dp"
+            android:spinnerMode="dropdown">
+        </Spinner>
+    </LinearLayout>
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/predictive_maintenance_dashboard_device_wifi_configure_button"
+        style="@style/STButtonStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Configure"
+        android:layout_gravity="end" />
+
+</LinearLayout>

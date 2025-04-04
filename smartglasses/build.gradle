@@ -1,0 +1,175 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'com.google.gms.google-services'
+apply plugin: 'com.google.android.gms.oss-licenses-plugin'
+
+static def getDate() {
+    def date = new Date()
+    def formattedDate = date.format('MMddHHmm')
+    return formattedDate
+}
+
+android {
+    namespace 'com.st.smartglasses'
+
+    buildFeatures {
+        viewBinding true
+    }
+
+    signingConfigs {
+        config {
+//            storeFile file("../myreleasekey.jks")
+//            storePassword "password"
+//            keyAlias "MyReleaseKey"
+//            keyPassword "password"
+            //storeFile file('/Users/tonyying/Desktop/my.jks')
+            storeFile file('/abc')
+            storePassword 'stmicro'
+            keyAlias 'key0'
+            keyPassword 'stmicro'
+        }
+    }
+
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion buildToolsVersion
+
+    defaultConfig {
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode 2
+        versionName '1.0.1'
+        applicationId "com.st.smartglasses"
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables.useSupportLibrary = true
+        multiDexEnabled true
+
+        manifestPlaceholders = [
+                'appAuthRedirectScheme': 'stassettracking'
+        ]
+        ndk {
+            debugSymbolLevel  'FULL'
+        }
+    }
+    buildTypes {
+        release {
+            buildConfigField "String", "ARROWHEAD_BASE_URL", '"http://137.204.57.93:8443/"'
+            //signingConfig signingConfigs.config
+            minifyEnabled false
+            shrinkResources false
+
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            //resValue 'string', 'application_id', android.defaultConfig.applicationId
+
+            buildConfigField "String", "DTDL_DB_BASE_URL", "\"https://raw.githubusercontent.com/SW-Platforms/appconfig/release/\""
+        }
+        debug {
+            buildConfigField "String", "ARROWHEAD_BASE_URL", '"http://137.204.57.93:8443/"'
+            applicationIdSuffix ".debug"
+            versionNameSuffix "-dev" + getDate()
+            //resValue 'string', 'application_id', android.defaultConfig.applicationId + applicationIdSuffix
+            signingConfig signingConfigs.config
+            buildConfigField "String", "DTDL_DB_BASE_URL", "\"https://raw.githubusercontent.com/SW-Platforms/appconfig/release/\""
+        }
+    }
+
+    sourceSets {
+        all {
+            res.srcDirs += ['st_images']
+        }
+    }
+
+    productFlavors {
+
+    }
+
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+
+    //to use until all the string doesn't have a chinese translation
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8.toString()
+    }
+    packagingOptions {
+        resources {
+            excludes += [            'thirdpartynotice.txt',
+                                     'maven.properties',
+                                     'META-INF/DEPENDENCIES',
+                                     'META-INF/LICENSE.md',
+                                     'META-INF/NOTICE.md',
+                                     'META-INF/io.netty.versions.properties',
+                                     'META-INF/INDEX.LIST',
+                                     'META-INF/rxjava.properties' ]
+        }
+    }
+
+    lint {
+        abortOnError false
+        checkReleaseBuilds false
+    }
+
+}
+
+ext {
+    leakcanaryVersion = '2.9.1'
+}
+
+repositories {
+    maven { url 'https://jitpack.io' }
+    mavenCentral()
+}
+configurations.all {
+    exclude group: 'com.google.guava', module: 'listenablefuture'
+}
+dependencies {
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.4"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:1.6.4"
+
+    implementation project(':BlueSTSDK')
+    implementation project(':BlueSTSDK_GUI')
+    implementation project(':trilobytelib')
+    implementation project(':BlueMSCloud')
+    implementation project(':BlueMSCloudProprietary')
+    implementation project(':BlueMSCloudSTAzure')
+    implementation project(':BlueMSFwUpgradeChecker')
+    implementation project(':STAWSDashboard')
+    implementation project(path: ':STWINBoard_GUI')
+    implementation project(':STLogin')
+    implementation project(':EtnaAnalytics')
+    implementation project(':UI')
+    implementation project(':DataBases')
+
+
+    implementation group: 'com.google.android.material', name: 'material', version: "$rootProject.androidx_materialVersion"
+    implementation group: 'androidx.legacy', name: 'legacy-support-v13', version: "${androidx_supportLegacy}"
+    implementation group: 'androidx.gridlayout', name: 'gridlayout', version: "$rootProject.androidx_gridLayout"
+    implementation group: 'androidx.appcompat', name: 'appcompat', version: "$rootProject.androidx_appCompatVersion"
+    implementation group: 'androidx.cardview', name: 'cardview', version: "$rootProject.androidx_cardViewVersion"
+    implementation group: 'androidx.constraintlayout', name: 'constraintlayout', version: "$rootProject.androidx_constraintLayoutVersion"
+    implementation group: 'androidx.annotation', name:'annotation',version: "$rootProject.androidx_annotationVersion"
+    implementation group: 'androidx.recyclerview', name:'recyclerview', version:"$rootProject.androidx_recycleViewVersion"
+    implementation group: 'androidx.preference', name:'preference-ktx', version:"$rootProject.androidx_preferenceVersion"
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.2.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.6.1'
+    implementation 'org.rajawali3d:rajawali:1.2.1970'
+    implementation 'io.github.youth5201314:banner:2.2.2'
+    implementation group:'androidx.room', name:'room-runtime', version: "$rootProject.androidx_roomVersion"
+    implementation group: 'androidx.lifecycle', name: 'lifecycle-livedata-ktx', version: "${androidx_lifecycleKtx}"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation 'androidx.multidex:multidex:2.0.1'
+
+    implementation project(':engine')
+
+
+
+}

@@ -1,0 +1,73 @@
+{
+  "project_info": {
+    "project_number": "313029040973",
+    "firebase_url": "https://bluems-b07aa.firebaseio.com",
+    "project_id": "bluems-b07aa",
+    "storage_bucket": "bluems-b07aa.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313029040973:android:5dec25e6d155a89c",
+        "android_client_info": {
+          "package_name": "com.st.smartglasses"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313029040973-j5svbdolubl62euu9tqf4posfani34uq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBujGpSSHzUUUmwYN8MKK0Z8_jV5FqPXlg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:313029040973:android:767d7488e819735e",
+        "android_client_info": {
+          "package_name": "com.st.smartglasses.debug"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "313029040973-j5svbdolubl62euu9tqf4posfani34uq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBujGpSSHzUUUmwYN8MKK0Z8_jV5FqPXlg"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

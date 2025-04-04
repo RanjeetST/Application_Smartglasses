@@ -1,0 +1,16 @@
+{
+  "title": "Predictive Maintenance",
+  "client_id": "3rkn4dlco2in15m7v4iuo7g6u",
+  "redirect_uri": "stpredmnt://callback/",
+  "authorization_scope": "aws.cognito.signin.user.admin openid profile email openid email",
+  "discovery_uri": "",
+  "authorization_endpoint_uri": "https://364380975641-predmaintapp-live.auth.eu-west-1.amazoncognito.com/oauth2/authorize",
+  "token_endpoint_uri": "https://364380975641-predmaintapp-live.auth.eu-west-1.amazoncognito.com/oauth2/token",
+  "registration_endpoint_uri": "",
+  "user_info_endpoint_uri": "https://364380975641-predmaintapp-live.auth.eu-west-1.amazoncognito.com/oauth2/userInfo",
+  "https_required": true,
+  "identity_provider": "mystlive",
+  "api_gateway": "https://1k8p44lea1.execute-api.eu-west-1.amazonaws.com/live/",
+  "web_dsh_endpoint": "",
+  "web_dsh_logout": "stpredmnt://signout/"
+}

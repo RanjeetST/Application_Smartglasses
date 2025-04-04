@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?><!--
+  ~ Copyright (c) 2017  STMicroelectronics – All rights reserved
+  ~ The STMicroelectronics corporate logo is a trademark of STMicroelectronics
+  ~
+  ~ Redistribution and use in source and binary forms, with or without modification,
+  ~ are permitted provided that the following conditions are met:
+  ~
+  ~ - Redistributions of source code must retain the above copyright notice, this list of conditions
+  ~   and the following disclaimer.
+  ~
+  ~ - Redistributions in binary form must reproduce the above copyright notice, this list of
+  ~   conditions and the following disclaimer in the documentation and/or other materials provided
+  ~   with the distribution.
+  ~
+  ~ - Neither the name nor trademarks of STMicroelectronics International N.V. nor any other
+  ~   STMicroelectronics company nor the names of its contributors may be used to endorse or
+  ~   promote products derived from this software without specific prior written permission.
+  ~
+  ~ - All of the icons, pictures, logos and other images that are provided with the source code
+  ~   in a directory whose title begins with st_images may only be used for internal purposes and
+  ~   shall not be redistributed to any third party or modified in any way.
+  ~
+  ~ - Any redistributions in binary form shall not include the capability to display any of the
+  ~   icons, pictures, logos and other images that are provided with the source code in a directory
+  ~   whose title begins with st_images.
+  ~
+  ~ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR
+  ~ IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY
+  ~ AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER
+  ~ OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+  ~ CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+  ~ SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY
+  ~ THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR
+  ~ OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY
+  ~ OF SUCH DAMAGE.
+  -->
+
+<resources>
+
+    <string name="app_name" translatable="false">ST SmartGlasses</string>
+    <string name="app_name_beta" translatable="false">ST Beta-BLE Sensor</string>
+
+    <string name="title_activity_debug_console">Debug Console</string>
+
+    <string name="title_activity_nfc_node_connection">Nfc Node</string>
+
+    <string name="demo_settings" translatable="false">Demo Settings</string>
+
+    <string name="distance_not_available" translatable="false">0000 mm</string>
+    <string name="tof_objects_not_found" translatable="false">Object Not Found</string>
+    <string name="tof_presence_not_found" translatable="false">Presence Not Found</string>
+    <string name="tof_presence_switch" translatable="false">Distance/Presence</string>
+
+    <string name="shortcut_search" translatable="false">Search Board</string>
+    <string name="shortcut_app" translatable="false">Create new App</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment" translatable="false">Hello blank fragment</string>
+    <string name="title_activity_send_receive_certificate" translatable="false">SendReceiveCertificate</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label" translatable="false">First Fragment</string>
+    <string name="second_fragment_label" translatable="false">Second Fragment</string>
+    <string name="next" translatable="false">Next</string>
+    <string name="previous" translatable="false">Previous</string>
+
+    <string name="hello_first_fragment" translatable="false">Hello first fragment</string>
+    <string name="hello_second_fragment" translatable="false">Hello second fragment. Arg: %1$s</string>
+    <string name="device_id" translatable="false">Device ID</string>
+    <string name="audioScene_indoor" translatable="false">Indoor</string>
+    <string name="algorithm_running" translatable="false">Running</string>
+    <string name="algorithm_paused" translatable="false">Paused</string>
+    <string name="change_to_dark_theme" translatable="false">Change to Dark Theme</string>
+    <string name="change_to_ligth_theme" translatable="false">Change to Light Theme</string>
+    <string name="choose_app_theme" translatable="false">Choose App Theme</string>
+    <string name="action_settings">Settings</string>
+    <!-- Activities -->
+    <string name="title_activity_menu">Menu</string>
+    <string name="title_activity_demo">Demo</string>
+    <string name="title_activity_text">Text</string>
+    <string name="title_activity_model">Model</string>
+    <!-- Demo menu -->
+    <string name="item">item</string>
+
+    <string-array name="menu_items">
+        <item>Load Model</item>
+        <!--<item>Models</item>-->
+        <!--
+       <item>Demo</item>
+       <item>Help</item>
+       <item>About</item>
+       -->
+        <!--<item>GitHub</item>-->
+        <item>Exit</item>
+    </string-array>
+
+    <string name="image">image</string>
+    <!-- Help -->
+    <string name="help_text">* Load Model: Load embedded models or from your device (you can find a lot in Internet. Just download them to your device). Please load only wavefront, stereolithography or Collada files (*.obj, *.stl, *.dae, *.gltf). If the model file (.obj) is referencing any materials file (*.mtl) be sure its in the same folder; same applies for texture files (*.jpg, *.bmp) being referenced in the material file.\n\n.* Demo: This is a demo of what can be done with the app. It basically loads several models to show usage of different draw modes, colors, textures and loading of files.\n\n* Help: This instructions page\n\n* About: Credits of this app.\n\n\nRenderer: Once you load a model, you can pinch to zoom, rotate the camera with your finger and rotate the screen with 2 fingers\n\nIn the action bar you will also find several buttons for toggling different draw modes like wireframe or points, enabling or disabiling lights, textures or animation.\n\nIf you need more help feel free to ask me: andresoviedo@gmail.com</string>
+    <!-- About -->
+    <string name="about_text">This application allows you to load 3D object models (currently only Wavefront, Stereolithography and Collada formats are supported).\n\nThe purpose of this application is to learn how to draw in android using the OpenGL 2.0 language.\n\nThe code for this application is open source and it can be found at https://github.com/andresoviedo/android-3D-model-viewer\n\nAs this is my first android app and Im still learning the OpenGL 2.0 language, it is highly probable that there are bugs; but I will try to continue improving the app.\n\nThe included models in the app were taken for free from Internet.\n\nAny comments, suggestions, contributions, complains or donations are welcome. Feel free to contact me at andresoviedo@gmail.com.\n\nFor more info about me visit http://www.andresoviedo.org</string>
+    <!-- Load settings -->
+    <string name="model_name">Model name</string>
+    <string name="texture">Texture</string>
+    <string name="invert_texture_coordinates">Invert texture coordinates</string>
+    <string name="cancel">Cancel</string>
+    <string name="load">Load</string>
+    <string name="load_model">Load Model</string>
+
+    <!-- GL Settings -->
+    <string name="toggle_wireframe">Toggle wireframe</string>
+    <string name="toggle_textures">Toggle textures</string>
+    <string name="toggle_lights">Toggle lights</string>
+    <string name="toggle_animation">Toggle animation</string>
+    <!--<string name="toggle_skeleton">Toggle skeleton</string>-->
+    <string name="toggle_boundingbox">Toggle bounding box</string>
+    <string name="load_texture">Load texture</string>
+
+    <!-- To review -->
+    <string name="app_logo_desc">Teapot animated logo</string>
+</resources>

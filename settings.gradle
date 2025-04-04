@@ -1,0 +1,25 @@
+include ':BlueSTSDK',
+        ':BlueSTSDK_GUI',
+        ':STWINBoard_GUI',
+        ':BlueMSCloud',
+        ':trilobytelib',
+        ':BlueMSCloudProprietary',
+        ':BlueMSCloudSTAzure',
+        ':BlueMSFwUpgradeChecker',
+        ':STAWSDashboard:STAWSData',
+        ':STAWSDashboard:STAWSDataUI',
+        ':STAWSDashboard',
+        ':STLogin',
+        ':EtnaAnalytics',
+        ':UI',
+        ':DataBases',
+        ':engine'
+
+project(':BlueSTSDK').projectDir = new File('BlueSTSDK/BlueSTSDK')
+project(":EtnaAnalytics").projectDir = new File(rootDir, 'STUtility/EtnaAnalytics/app')
+project(":STLogin").projectDir = new File(rootDir, 'STUtility/STLogin/STLogin')
+project(":DataBases").projectDir = new File(rootDir, 'STUtility/DataBases')
+project(":UI").projectDir = new File(rootDir, 'STUtility/UI')
+include ':PredictiveMaintenanceDashboard'
+
+include ':smartglasses'

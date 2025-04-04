@@ -1,0 +1,64 @@
+plugins {
+    id 'com.android.library'
+    id 'kotlin-android'
+    id 'kotlin-kapt'
+}
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        minSdkVersion 26
+        targetSdkVersion 33
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles "consumer-rules.pro"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation "androidx.core:core-ktx:$rootProject.core_ktx"
+    implementation "androidx.appcompat:appcompat:$rootProject.androidx_appCompatVersion"
+    implementation 'com.google.android.material:material:1.6.1'
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.androidx_constraintLayoutVersion"
+    implementation 'androidx.legacy:legacy-support-v4:1.0.0'
+    implementation group: 'androidx.fragment', name: 'fragment-ktx', version: "$rootProject.androidx_fragmentKtx"
+
+    implementation project(':BlueSTSDK')
+    implementation project(':BlueSTSDK_GUI')
+    implementation project(path: ':STLogin')
+    implementation project(path: ':UI')
+
+    implementation "com.github.bumptech.glide:glide:$glideVersion"
+    implementation "com.squareup.okhttp3:logging-interceptor"
+    implementation "com.squareup.okhttp3:okhttp"
+    implementation group: 'androidx.room', name: 'room-ktx', version: "$rootProject.androidx_roomVersion"
+    implementation group: 'androidx.room', name: 'room-runtime', version: "$rootProject.androidx_roomVersion"
+    implementation group: 'com.google.code.gson', name: 'gson', version: "$rootProject.gsonVersion"
+    implementation group: 'com.squareup.retrofit2', name: 'converter-gson', version: '2.9.0'
+    implementation group: 'com.squareup.retrofit2', name: 'retrofit', version: '2.9.0'
+    implementation(platform("com.squareup.okhttp3:okhttp-bom:4.9.0"))
+    kapt group: 'androidx.room', name: 'room-compiler', version: "$rootProject.androidx_roomVersion"
+
+    //Tmp for kotlin 1.7 and room 2.4.2 waiting room 2.4.3
+    //kapt "org.jetbrains.kotlinx:kotlinx-metadata-jvm:0.5.0"
+
+    testImplementation "junit:junit:$rootProject.junitVersion"
+}
